@@ -1,0 +1,9 @@
+#infosContainer{
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 32px;
+}
+#descIngContainer{
+  display: flex;
+  flex-direction: column;
+}

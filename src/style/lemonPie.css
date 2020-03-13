@@ -1,12 +1,11 @@
 #obj3D{
-  width: 514px;
+  width: 400px;
   height: 334px;
   outline-style: none;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column-reverse;
-  background-color: lightpink;
   border-radius: 30px;
 }
 #buttonRotation{
