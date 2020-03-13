@@ -23,7 +23,8 @@ export default function LemonPie(props){
     grisClair : 0x5b5b5b,
     gris : 0xb7b7b7,
     backgroundGris : 0x050505,
-    rouge: 0xfc0000
+    rouge: 0xfc0000,
+    orange: 0xFFB534
   }
 
   let scene = new THREE.Scene();
@@ -85,9 +86,9 @@ export default function LemonPie(props){
 
           //**** FOR WRL ***//
           const object = gltf.scene;
-          object.scale.set(0.09,0.09,0.09)
+          object.scale.set(0.039,0.039,0.039)
           object.rotation.y = 4.5
-          object.position.set(0,4,0)
+          object.position.set(0,2,0)
           object.receiveShadow = true;
           object.castShadow = true;
           scene.add(object)
@@ -111,14 +112,15 @@ export default function LemonPie(props){
           } );
 
           //*** AJOUTE UN SOL ***//
-          let planeGeometry = new THREE.PlaneBufferGeometry( 20, 20, 32, 32 );
-          let planeMaterial = new THREE.MeshStandardMaterial( { color: colors.grisClair } )
+          let planeGeometry = new THREE.PlaneBufferGeometry( 7, 7, 32, 32 );
+          let planeMaterial = new THREE.MeshStandardMaterial( { color: colors.orange } )
           planeMaterial.color.convertSRGBToLinear();
           planeMaterial.needsUpdate = true
           let plane = new THREE.Mesh( planeGeometry, planeMaterial );
           plane.receiveShadow = true;
           plane.rotation.x = - Math.PI * 0.5
-          // scene.add( plane );
+          plane.position.set(0,-0.8,0)
+          scene.add( plane );
 
           // const box = new THREE.Box3().setFromObject(object);
           // const size = box.getSize(new THREE.Vector3()).length();
@@ -135,12 +137,12 @@ export default function LemonPie(props){
           //scene.add( cube );
 
           // **** LIGHTS *** //
-          let light = new THREE.AmbientLight( 0xffffff, 3 );
+          let light = new THREE.AmbientLight( colors.blanc, 2 );
           scene.add( light );
 
           //jaune : 0xffaa00
 
-          let directionalLight2 = new THREE.DirectionalLight( colors.gris, 3 );
+          let directionalLight2 = new THREE.DirectionalLight( colors.blanc, 3 );
           directionalLight2.position.set(-4, 3, 3)
           directionalLight2.castShadow = true;
           directionalLight2.shadow.camera.near = 0.5;
@@ -155,7 +157,7 @@ export default function LemonPie(props){
           // directionalLight2.shadow.camera.bottom = -500;
           scene.add( directionalLight2 );
               let directionallightHelper2 = new THREE.DirectionalLightHelper( directionalLight2 );
-              scene.add(directionallightHelper2)
+              //scene.add(directionallightHelper2)
 
           let directionalLight3 = new THREE.DirectionalLight( colors.blanc, 1 );
           directionalLight3.position.set(4,3,4)
@@ -168,20 +170,20 @@ export default function LemonPie(props){
           directionalLight3.shadow.bias = -0.001
           scene.add( directionalLight3 );
               let directionallightHelper3 = new THREE.DirectionalLightHelper( directionalLight3 );
-              scene.add(directionallightHelper3)
+              //scene.add(directionallightHelper3)
 
-          let directionalLight4 = new THREE.DirectionalLight( colors.blanc, 1 );
-          directionalLight4.position.set(2,5,-4)
+          let directionalLight4 = new THREE.DirectionalLight( colors.blanc, 4 );
+          directionalLight4.position.set(2,2,-2)
           directionalLight4.castShadow = true;
-          directionalLight4.shadow.camera.near = 0.5;
-          directionalLight4.shadow.camera.far = 500;
-          directionalLight4.shadow.mapSize.width = 1000; // default is 512
-          directionalLight4.shadow.mapSize.height = 1000;
-          directionalLight4.shadow.radius = 8;
-          directionalLight4.shadow.bias = -0.001
+          // directionalLight4.shadow.camera.near = 0.5;
+          // directionalLight4.shadow.camera.far = 500;
+          // directionalLight4.shadow.mapSize.width = 1000; // default is 512
+          // directionalLight4.shadow.mapSize.height = 1000;
+          // directionalLight4.shadow.radius = 8;
+          // directionalLight4.shadow.bias = -0.001
           scene.add( directionalLight4 );
               let directionallightHelper4 = new THREE.DirectionalLightHelper( directionalLight4 );
-              scene.add(directionallightHelper4)
+              //scene.add(directionallightHelper4)
           
           
           let sphere = new THREE.SphereGeometry( 0.5, 16, 8 )
@@ -254,8 +256,8 @@ export default function LemonPie(props){
 
           // **** CAMERA SETTINGS *** //
           camera.position.x = 0;
-          camera.position.y = 6;
-          camera.position.z = 10;
+          camera.position.y = 3;
+          camera.position.z = 7;
 
           camera3D.lookAt(0, 0, 0);
           camera.updateProjectionMatrix();
@@ -271,8 +273,8 @@ export default function LemonPie(props){
           // ** ALLOW SCROLL FOR ZOOM IN OUT **//
           let controls = new OrbitControls( camera, renderer.domElement );
           controls.update();
-          controls.maxDistance = 16 //premet de controler la disatance max entre le point 0 et le z max.  Ici z max vaut 8
-          controls.minDistance = 6 // permet de controler la distance mininal a partir de z.
+          controls.maxDistance = 8 //premet de controler la disatance max entre le point 0 et le z max.  Ici z max vaut 8
+          controls.minDistance = 3.5 // permet de controler la distance mininal a partir de z.
 
           renderer.render( scene, camera );
 

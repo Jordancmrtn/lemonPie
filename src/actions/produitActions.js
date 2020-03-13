@@ -1,7 +1,14 @@
+import _ from 'lodash';
+
 export const incrementCounter = (dispatch, article) => {
+  
+  let newArticle = _.cloneDeep(article)
+  const id = Date.now()
+  newArticle.id = id;
+
   dispatch({
     type : "INCREMENT",
-    payload : article
+    payload : newArticle
   })
 }
 

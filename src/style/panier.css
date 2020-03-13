@@ -1,0 +1,12 @@
+.panier{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.panierIcon{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
