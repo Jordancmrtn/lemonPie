@@ -1,15 +1,14 @@
 import React from 'react'
 import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
 import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useDispatch } from 'react-redux';
 import '../style/panier.css'
 
 
 
-export default function Panier({article}) {
+export default function Panier() {
   const panier = useSelector(state => state.produit.panier)
-  const dispatch = useDispatch()
 
   return (
     <div className="panier">
@@ -18,7 +17,8 @@ export default function Panier({article}) {
         {panier.length}
         <FontAwesomeIcon icon={faShoppingBag} />
       </div>
-      <button id="buttonCounter" style={{marginTop : "12px"}} onClick={() => {dispatch({type : "VOIR_PANIER"})}}>Voir mon panier</button>
+      <Link to="/panier" id="buttonPanier">Voir mon panier</Link>
+      {/* <button id="buttonCounter" style={{marginTop : "12px"}} onClick={() => {dispatch({type : "VOIR_PANIER"})}}>Voir mon panier</button> */}
     </div>
   )
 }

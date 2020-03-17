@@ -3,20 +3,21 @@ import Article from '../Article'
 import Counter from '../Counter'
 import Panier from '../Panier'
 import LemonPie from '../LemonPie'
-import { Link } from 'react-router-dom';
+import {useSpring, animated} from 'react-spring'
 
 
 export default function Product({article}) {
+
+  const styleSpring = useSpring({opacity: 1, from: {opacity: 0}})
   
   return (
-    <div className="squareBackground">
+    <animated.div style={styleSpring} className="squareBackground">
       <div id="articleCounter">
         <Article article={article}/>
         <Counter article={article}/>
-        <Panier article={article}/>
+        <Panier />
       </div>
       <LemonPie/>
-      <Link to="/panier">PANIER</Link>
-    </div>
+    </animated.div >
   )
 }

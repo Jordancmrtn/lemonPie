@@ -1,6 +1,6 @@
 import _ from 'lodash';
 
-let initialstate = { isloading : false, counter : 0, panier:[{type: "cupcake", quatite: 3}]}
+let initialstate = { isloading : false, counter : 0, panier:[{type: "cupcake", title: "Cupecake", id: 1584106464745}], selectedProduct: {}}
 
 const produitReducer = (state=initialstate, action) =>{
   switch(action.type){
@@ -16,9 +16,6 @@ const produitReducer = (state=initialstate, action) =>{
       }
     case 'COUNTER_LOADING_END' : 
       return { ...state, isloading : false }
-    case 'VOIR_PANIER' :
-      (console.log(state.panier))
-      return {...state} 
     case 'DELETE_PRODUCT_TYPE' : 
       let updateArr = removeByType(state.panier,action.payload)
 
@@ -38,6 +35,12 @@ const produitReducer = (state=initialstate, action) =>{
       } else {
       return { ...state, counter: state.counter -1, panier : updateArr}
       }
+    case 'DELETE_PRODUCT_ID' :
+      let newArray = _.cloneDeep(state.panier)
+      newArray = newArray.filter(product => product.id !== action.payload)
+      return { ...state, panier : newArray }
+    case 'FETCH_PRODUCT_ID' : 
+
     case 'ERROR' : 
       return { ...state, isloading : false }
     default:
