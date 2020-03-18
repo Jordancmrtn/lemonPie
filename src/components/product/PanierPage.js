@@ -37,7 +37,8 @@ export default function PanierPage() {
           </>
           }
 
-        <Link to="/">LemonPie</Link>
+        <Link to="/product/lemonPie">LemonPie</Link>
+        <Link to="/product/pecanPie">Pecan Pie</Link>
       </div>
     </animated.div>
   )
