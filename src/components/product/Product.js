@@ -5,19 +5,17 @@ import Panier from '../partials/Panier'
 import LemonPie from '../LemonPie'
 import Loader from '../partials/Loader'
 import {useSpring, animated} from 'react-spring'
-import { getProducts } from '../../actions/produitActions.js';
-import { useDispatch } from 'react-redux'
-import { useSelector } from 'react-redux'
+import { getProductsId } from '../../actions/produitActions.js';
+import { useDispatch, useSelector } from 'react-redux'
 
 
-
-export default function Product({article, match}) {
+export default function Product({match}) {
   const dispatch = useDispatch()
   const product = useSelector(state => state.produit.selectedProduct)
   const loader = useSelector(state => state.produit.isloading)
 
   useEffect(() => {
-    getProducts(dispatch, match.params.id)
+    getProductsId(dispatch, match.params.id)
   }, [])
 
   const styleSpring = useSpring({opacity: 1, from: {opacity: 0}})
@@ -29,6 +27,7 @@ export default function Product({article, match}) {
       : 
       <animated.div style={styleSpring} className="squareBackground">
         <div id="articleCounter">
+          <p>hello</p>
           <Article product={product} loader={loader}/>
           <Counter product={product} loader={loader}/>
           <Panier />

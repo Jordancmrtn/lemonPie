@@ -30,7 +30,7 @@ export default function PanierPage() {
             {panier.map((item) =>
             <div className="panierItem" key={item.id}>
               <p>{item.title}</p>
-              <FontAwesomeIcon icon={faTrash} onClick={() => {dispatch({type : "DELETE_PRODUCT_ID", payload : item.id})}}/>
+              <FontAwesomeIcon icon={faTrash} style={{cursor: "pointer"}} onClick={() => {dispatch({type : "DELETE_PRODUCT_ID", payload : item.id})}}/>
             </div> 
           )}
           </div>
@@ -39,6 +39,7 @@ export default function PanierPage() {
 
         <Link to="/product/lemonPie">LemonPie</Link>
         <Link to="/product/pecanPie">Pecan Pie</Link>
+        <Link to="/">Accueil</Link>
       </div>
     </animated.div>
   )

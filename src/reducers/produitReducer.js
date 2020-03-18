@@ -1,18 +1,6 @@
 import _ from 'lodash';
 
-const articles = [{
-  type : "lemonPie",
-  title : "Lemon Pie",
-  desc : "Lemon meringue pie is a type of baked pie, usually served for dessert, made with a crust usually made of shortcrust pastry, lemon custard filling and a fluffy meringue topping",
-  ingredients : "1 cup white sugar, 2 tablespoons all-purpose flour, 3 tablespoons cornstarch, ¼ teaspoon salt, 1 ½ cups water, 2 lemons, juiced and zested, 2 tablespoons butter, 4 egg yolks, beaten, 1 (9 inch) pie crust, baked, 4 egg whites, 6 tablespoons white sugar"
-},{
-  type : "pecanPie",
-  title : "Pecan Pie",
-  desc : "bla bla bla",
-  ingredients : "bla bla bla bla"
-}
-]
-let initialstate = { isloading : false, counter : 0, panier:[{type: "cupcake", title: "Cupecake", id: 1584106464745}], selectedProduct: {}, articles: articles}
+let initialstate = { isloading : false, counter : 0, panier:[], selectedProduct: {}, allArticles: []}
 
 const produitReducer = (state=initialstate, action) =>{
   switch(action.type){
@@ -53,8 +41,9 @@ const produitReducer = (state=initialstate, action) =>{
       return { ...state, panier : newArray }
     case 'GET_PRODUCT_ID' : 
       const selectedProduct = action.payload.products.find((d)=>d.type === action.payload.id)
-      console.log(selectedProduct)
       return { ...state, isloading : false, selectedProduct: selectedProduct}
+    case 'GET_ALL_PRODUCT' : 
+      return { ...state, isloading : false, allArticles: action.payload.products}
     case 'ERROR' : 
       return { ...state, isloading : false }
     default:
