@@ -27,7 +27,6 @@ export default function Product({match}) {
       : 
       <animated.div style={styleSpring} className="squareBackground">
         <div id="articleCounter">
-          <p>hello</p>
           <Article product={product} loader={loader}/>
           <Counter product={product} loader={loader}/>
           <Panier />

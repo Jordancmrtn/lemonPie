@@ -40,7 +40,7 @@ const produitReducer = (state=initialstate, action) =>{
       newArray = newArray.filter(product => product.id !== action.payload)
       return { ...state, panier : newArray }
     case 'GET_PRODUCT_ID' : 
-      const selectedProduct = action.payload.products.find((d)=>d.type === action.payload.id)
+      const selectedProduct = action.payload.products.find((d)=>d.title === action.payload.id)
       return { ...state, isloading : false, selectedProduct: selectedProduct}
     case 'GET_ALL_PRODUCT' : 
       return { ...state, isloading : false, allArticles: action.payload.products}
@@ -51,3 +51,4 @@ const produitReducer = (state=initialstate, action) =>{
   }
 }
 export default produitReducer;
+

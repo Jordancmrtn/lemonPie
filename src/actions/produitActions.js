@@ -32,15 +32,43 @@ export async function getProductsId(dispatch, id){
   await new Promise((resolve, reject)=>{
     setTimeout(()=>{
       products = [{
-        type : "lemonPie",
+        type : "pie",
+        img : process.env.PUBLIC_URL+"/lemonPie.png",
+        price : "2€55",
         title : "Lemon Pie",
         desc : "Lemon meringue pie is a type of baked pie, usually served for dessert, made with a crust usually made of shortcrust pastry, lemon custard filling and a fluffy meringue topping",
-        ingredients : "1 cup white sugar, 2 tablespoons all-purpose flour, 3 tablespoons cornstarch, ¼ teaspoon salt, 1 ½ cups water, 2 lemons, juiced and zested, 2 tablespoons butter, 4 egg yolks, beaten, 1 (9 inch) pie crust, baked, 4 egg whites, 6 tablespoons white sugar"
+        ingredients : ["sugar", "flour", "cornstarch","salt", "water", "lemons", "butter", "eggs", "pie crust"]
       },{
-        type : "pecanPie",
+        type : "pie",
+        img : process.env.PUBLIC_URL+"/pecanPie.png",
+        price : "2€95",
         title : "Pecan Pie",
         desc : "Pecan pie is a pie of pecan nuts mixed with a filling of eggs, butter, and sugar (typically corn syrup)",
-        ingredients : "bla bla bla bla"
+        ingredients : ["sugar", "eggs", "butter", "vanilla", "pecans", "pie crust"]
+      },
+      {
+        type : "cookie",
+        img : process.env.PUBLIC_URL+"/OatMealCreampies.png",
+        price : "1€25",
+        title : "Oat Meal Creampies",
+        desc : "Homemade Oatmeal Cream Pies are outrageously delicious! Soft oatmeal cookies with a rich marshmallow buttercream filling",
+        ingredients : ["butter", "sugar", "egg", "salt", "baking soda", "cinnamon", "flour"]
+      },
+      {
+        type : "cupecakce",
+        img : process.env.PUBLIC_URL+"/vanilleCupecake.png",
+        price : "1€75",
+        title : "Vanilla Cupecake",
+        desc : "This vanilla cupcake recipe is easy, soft, and moist ! The perfect birthday cupcake topped with a tall swirl of frosting !",
+        ingredients : ["flour", "sugar", "butter", "salt", "baking power", "egg", "milk", "flour"]
+      },
+      {
+        type : "cupecakce",
+        img : process.env.PUBLIC_URL+"/chocolateCupecake.png",
+        price : "1€75",
+        title : "Chocolate Cupecake",
+        desc : "The best Chocolate cupecake, for your little pleasure ",
+        ingredients : ["water", "sugar", "butter", "cacao", "baking power"]
       }
       ]
       resolve()
@@ -62,19 +90,43 @@ export async function getAllProducts(dispatch, id){
   await new Promise((resolve, reject)=>{
     setTimeout(()=>{
       products = [{
-        type : "lemonPie",
+        type : "pie",
         img : process.env.PUBLIC_URL+"/lemonPie.png",
         price : "2€55",
         title : "Lemon Pie",
         desc : "Lemon meringue pie is a type of baked pie, usually served for dessert, made with a crust usually made of shortcrust pastry, lemon custard filling and a fluffy meringue topping",
-        ingredients : "1 cup white sugar, 2 tablespoons all-purpose flour, 3 tablespoons cornstarch, ¼ teaspoon salt, 1 ½ cups water, 2 lemons, juiced and zested, 2 tablespoons butter, 4 egg yolks, beaten, 1 (9 inch) pie crust, baked, 4 egg whites, 6 tablespoons white sugar"
+        ingredients : ["sugar", "flour", "cornstarch","salt", "water", "lemons", "butter", "eggs", "pie crust"]
       },{
-        type : "pecanPie",
+        type : "pie",
         img : process.env.PUBLIC_URL+"/pecanPie.png",
         price : "2€95",
         title : "Pecan Pie",
         desc : "Pecan pie is a pie of pecan nuts mixed with a filling of eggs, butter, and sugar (typically corn syrup)",
-        ingredients : "bla bla bla bla"
+        ingredients : ["sugar", "eggs", "butter", "vanilla", "pecans", "pie crust"]
+      },
+      {
+        type : "cookie",
+        img : process.env.PUBLIC_URL+"/OatMealCreampies.png",
+        price : "1€25",
+        title : "Oat Meal Creampies",
+        desc : "Homemade Oatmeal Cream Pies are outrageously delicious! Soft oatmeal cookies with a rich marshmallow buttercream filling",
+        ingredients : ["butter", "sugar", "egg", "salt", "baking soda", "cinnamon", "flour"]
+      },
+      {
+        type : "cupecakce",
+        img : process.env.PUBLIC_URL+"/vanilleCupecake.png",
+        price : "1€75",
+        title : "Vanilla Cupecake",
+        desc : "This vanilla cupcake recipe is easy, soft, and moist ! The perfect birthday cupcake topped with a tall swirl of frosting !",
+        ingredients : ["flour", "sugar", "butter", "salt", "baking power", "egg", "milk", "flour"]
+      },
+      {
+        type : "cupecakce",
+        img : process.env.PUBLIC_URL+"/chocolateCupecake.png",
+        price : "1€75",
+        title : "Chocolate Cupecake",
+        desc : "The best Chocolate cupecake, for your little pleasure ",
+        ingredients : ["water", "sugar", "butter", "cacao", "baking power"]
       }
       ]
       resolve()

@@ -1,6 +1,7 @@
 import React from 'react';
 import './style/app.css';
 import Product from './components/product/Product'
+import Products from './components/product/Products'
 import PanierPage from './components/product/PanierPage'
 import PageAccueil from './components/PageAccueil'
 
@@ -12,6 +13,7 @@ function App() {
     <div id="app">
     <Switch>
       <Route exact path="/" component={PageAccueil} />
+      <Route exact path="/products" component={Products} />
       <Route exact path="/product/:id" component={Product}/>
       <Route exact path="/panier" component={PanierPage} />
     </Switch>
