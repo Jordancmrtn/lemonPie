@@ -1,0 +1,33 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+#app {
+  text-align: center;
+  background-color: rgb(255, 253, 245);
+  min-height: 100vh;
+  width: 100vw;
+  @include displayFlexCenter(column,center);
+}
+
+.squareBackground{
+  @include displayFlexCenter(column,space-evenly);
+  width: 90%;
+  min-height: 90vh;
+  border-radius: 10px;
+  background-color: #f9e4c7;
+}
+
+#bigTitle{
+  margin: 0;
+  font-size: 104px;
+  width: 100%;
+  color: $backgroundButton;
+  font-style: oblique;
+}
+#articleCounter{
+  @include displayFlexCenter(column,center);
+  width: 50%;
+}
+canvas{
+  outline-style: none;
+}

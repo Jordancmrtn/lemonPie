@@ -1,7 +1,7 @@
 import React from 'react';
 import {incrementCounter, decrementCounter, ajoutPanier} from '../../actions/produitActions';
 import { useSelector, useDispatch } from 'react-redux';
-import '../../style/counter.css'
+import '../../style/counter.scss'
 
 
 export default function Counter({product, loader}) {

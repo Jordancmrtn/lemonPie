@@ -1,10 +1,9 @@
 import React from 'react';
-import './style/app.css';
-import Product from './components/product/Product'
-import Products from './components/product/Products'
-import PanierPage from './components/product/PanierPage'
+import './style/app.scss';
+import ProductPage from './components/page/ProductPage'
+import AllProductsPage from './components/page/AllProductsPage'
+import PanierPage from './components/page/PanierPage'
 import PageAccueil from './components/PageAccueil'
-
 import { Switch, Route } from 'react-router-dom';
 
 function App() {
@@ -13,8 +12,8 @@ function App() {
     <div id="app">
     <Switch>
       <Route exact path="/" component={PageAccueil} />
-      <Route exact path="/products" component={Products} />
-      <Route exact path="/product/:id" component={Product}/>
+      <Route exact path="/products" component={AllProductsPage} />
+      <Route exact path="/product/:id" component={ProductPage}/>
       <Route exact path="/panier" component={PanierPage} />
     </Switch>
     </div>

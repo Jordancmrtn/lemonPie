@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
-import '../style/lemonPie.css';
+import '../style/lemonPie.scss';
 
 export default function LemonPie(props){
 

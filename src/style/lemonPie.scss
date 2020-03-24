@@ -1,18 +1,18 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
 #obj3D{
   width: 400px;
   height: 334px;
   outline-style: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column-reverse;
+  @include displayFlexCenter(column-reverse,center);
   border-radius: 30px;
 }
 #buttonRotation{
   width: fit-content;
   border: none;
-  background-color: rgb(255, 181, 52);
-  color: white;
+  background-color: $backgroundButton;
+  color: $white;
   border-radius: 50px;
   padding: 7px 32px;
   margin-top: 17px;

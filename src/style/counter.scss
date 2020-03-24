@@ -1,0 +1,13 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+#buttonCounter{
+  @include buttonBaseOrange();
+}
+#counterContainer{
+  @include displayFlexCenter(row,space-evenly);
+  width: 134px;
+}
+.squareBackground h3{
+  margin: 0;
+}

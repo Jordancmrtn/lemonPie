@@ -1,0 +1,27 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+$widthPanier : 40%;
+
+.panierItem{
+  @include displayFlexCenter(row,space-evenly);
+  width: $widthPanier;
+}
+.panierList{
+  width: $widthPanier;
+  @include displayFlexCenter(column,space-evenly);
+}
+.divPanier{
+  @include displayFlexCenter(column,space-evenly);
+  width: 100%;
+  text-decoration: none;
+    a{
+      @include buttonBaseOrange();
+      font-size : 12px;
+    }
+}
+#inconPanierVide{
+  width: 133px;
+  height: auto;
+  margin: 102px 0 20px 0 !important;
+}

@@ -1,0 +1,17 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+.panier{
+  @include displayFlexCenter(column,center);
+}
+.panierIcon{
+  @include displayFlexCenter(row,center);
+}
+#buttonPanier{
+  @include buttonBaseOrange();
+  margin-top: 8px;
+  font-size: 12px;
+}
+#buttonPanier:hover{
+  background-color: $orangeHover;
+}

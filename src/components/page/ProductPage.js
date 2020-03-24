@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
-import Article from '../Article'
+import Article from '../partials/Article'
 import Counter from '../partials/Counter'
 import Panier from '../partials/Panier'
-import LemonPie from '../LemonPie'
+import LemonPie3D from '../LemonPie3D'
 import Loader from '../partials/Loader'
 import {useSpring, animated} from 'react-spring'
 import { getProductsId } from '../../actions/produitActions.js';
@@ -26,12 +26,15 @@ export default function Product({match}) {
       <Loader />
       : 
       <animated.div style={styleSpring} className="squareBackground">
-        <div id="articleCounter">
-          <Article product={product} loader={loader}/>
-          <Counter product={product} loader={loader}/>
-          <Panier />
+        <h1 id="bigTitle">{product.title}</h1>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
+          <div id="articleCounter">
+            <Article product={product} loader={loader}/>
+            <Counter product={product} loader={loader}/>
+            <Panier />
+          </div>
+          <LemonPie3D/>
         </div>
-        <LemonPie/>
       </animated.div >
       }
     </>

@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
 import {useSpring, animated} from 'react-spring'
 import { faTrash } from "@fortawesome/free-solid-svg-icons";
 import { faFrownOpen } from "@fortawesome/free-regular-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import '../../style/panierPage.css'
+import '../../style/panierPage.scss'
 
 export default function PanierPage() {
   const panier = useSelector(state => state.produit.panier)
@@ -36,10 +36,7 @@ export default function PanierPage() {
           </div>
           </>
           }
-
-        <Link to="/product/Lemon%20Pie">LemonPie</Link>
-        <Link to="/product/Pecan%20Pie">Pecan Pie</Link>
-        <Link to="/">Accueil</Link>
+        <NavLink to="/">Accueil</NavLink>
       </div>
     </animated.div>
   )

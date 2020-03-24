@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { getAllProducts } from '../actions/produitActions'
 import { useDispatch, useSelector } from 'react-redux'
-import '../style/pageAccueil.css'
+import '../style/pageAccueil.scss'
 import Loader from '../components/partials/Loader'
 import Panier from '../components/partials/Panier'
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -25,6 +25,7 @@ export default function PageAccueil({history}) {
     :
       <div className="squareBackground">
         <h1 id="bigTitle">My Market</h1>
+        <div style={{display: "flex", flexDirection: "row", justifyContent: "space-evenly", alignItems: "center", width: "100%"}}>
         {Allproducts.splice(0, 2).map((product) => 
           <div className="productCard" id="productCardAccueil" key={product.type} onClick={() => history.push(`/product/${product.title}`)}>
             <img src={product.img} style={{heigh: "auto", width: "134px"}}/>
@@ -37,6 +38,7 @@ export default function PageAccueil({history}) {
           <p>Plus de produits</p>
         </NavLink>
         <Panier />
+        </div>
       </div>
       }
     </>

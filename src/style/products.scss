@@ -1,0 +1,9 @@
+@import 'utilities/mixins';
+
+.buttonsDiv{
+  @include displayFlexCenter(row,space-evenly);
+  width: 80%;
+}
+.selectBar{
+  width: 50%;
+}
