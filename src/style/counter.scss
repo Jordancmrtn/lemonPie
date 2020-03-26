@@ -4,10 +4,21 @@
 #buttonCounter{
   @include buttonBaseOrange();
 }
+#buttonCounter:hover{
+  background-color: $orangeHover;
+}
 #counterContainer{
   @include displayFlexCenter(row,space-evenly);
   width: 134px;
 }
 .squareBackground h3{
   margin: 0;
+}
+
+#containerCounter{
+  @include displayFlexCenter(column,center);
+
+  h3{
+    margin-bottom : 12px;
+  }
 }

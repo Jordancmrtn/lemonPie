@@ -1,5 +1,5 @@
-@import 'utilities/mixins';
-@import 'utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/variables';
 
 $widthPanier : 40%;
 
@@ -20,7 +20,10 @@ $widthPanier : 40%;
       font-size : 12px;
     }
 }
-#inconPanierVide{
+a:hover{
+  background-color: $orangeHover;
+}
+#iconPanierVide{
   width: 133px;
   height: auto;
   margin: 102px 0 20px 0 !important;

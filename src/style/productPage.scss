@@ -1,0 +1,51 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+#articleInfosDiv{
+  @include displayFlexCenter(column,center);
+
+  img{
+    height: auto;
+    width: 50%;
+    margin: 20px 0;
+    border-radius: 10px;
+  }
+}
+
+#articleCounter{
+  @include displayFlexCenter(column,center);
+  width: 50%;
+  text-align: left;
+}
+
+#containerDivArticle{
+  @include displayFlexCenter(column,center);
+}
+
+#articleTitle{
+  font-size: 44px;
+  margin: 12px 0;
+  color: $backgroundButton;
+}
+
+@media screen and (min-width: 376px) {
+  #containerDivArticle{
+    @include displayFlexCenter(row,center);
+  }
+
+  #articleInfosDiv{  
+    text-align: center;
+    img{
+      height: auto;
+      width: 40%;
+      margin: 20px 0;
+      border-radius: 10px;
+    }
+  }
+  #articleCounter{
+    width: 100%;
+  }
+  #articleTitle{
+    font-size: 64px;
+  }
+}

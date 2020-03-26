@@ -1,5 +1,5 @@
 import React from 'react';
-import './style/app.scss';
+import './style/bases/app.scss';
 import ProductPage from './components/page/ProductPage'
 import AllProductsPage from './components/page/AllProductsPage'
 import PanierPage from './components/page/PanierPage'

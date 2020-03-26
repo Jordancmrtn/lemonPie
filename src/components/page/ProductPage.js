@@ -7,6 +7,8 @@ import Loader from '../partials/Loader'
 import {useSpring, animated} from 'react-spring'
 import { getProductsId } from '../../actions/produitActions.js';
 import { useDispatch, useSelector } from 'react-redux'
+import Header from '../partials/Header'
+import '../../style/productPage.scss'
 
 
 export default function Product({match}) {
@@ -24,18 +26,24 @@ export default function Product({match}) {
     <>
       {loader ?
       <Loader />
-      : 
+      :
+      <>
+      <Header />
       <animated.div style={styleSpring} className="squareBackground">
-        <h1 id="bigTitle">{product.title}</h1>
-        <div style={{display: "flex", flexDirection: "row", justifyContent: "center", alignItems: "center"}}>
-          <div id="articleCounter">
+        <h1 id="articleTitle">{product.title}</h1>
+        <div id="containerDivArticle">
+          <div id="articleInfosDiv">
+            <img src={product.img} />
             <Article product={product} loader={loader}/>
+          </div>
+          <div id="articleCounter">
             <Counter product={product} loader={loader}/>
             <Panier />
           </div>
-          <LemonPie3D/>
         </div>
+        {/* <LemonPie3D/> */}
       </animated.div >
+      </>
       }
     </>
   )

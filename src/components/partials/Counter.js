@@ -11,8 +11,8 @@ export default function Counter({product, loader}) {
 
   return (
     <>
-      <div style={{display: "flex", flexDirection: "column", justifyContent : "center", alignItems: "center"}}>
-        <h3 style={{marginBottom : "12px"}}>ADD TO BAG</h3>
+      <div id="containerCounter">
+        <h3>ADD TO BAG</h3>
         <div id="counterContainer">
           <button id="buttonCounter" onClick={() => {dispatch({type : "DELETE_PRODUCT_TYPE", payload: product.type})}}>-</button>
           <span>{counter}</span>

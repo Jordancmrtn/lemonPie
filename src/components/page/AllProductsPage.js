@@ -1,14 +1,18 @@
 import React, { useEffect, useState } from 'react'
 import { getAllProducts } from '../../actions/produitActions'
 import { useDispatch, useSelector } from 'react-redux'
-import '../../style/pageAccueil.scss'
+import { NavLink } from 'react-router-dom'
+
 import Loader from '../partials/Loader'
+
 import Checkbox from '@material-ui/core/Checkbox';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
-import { NavLink } from 'react-router-dom'
 import Select from 'react-select'
 import _ from 'lodash';
-import '../../style/products.scss'
+
+import '../../style/pages/pageAccueil.scss'
+import '../../style/pages/allProductsPage.scss'
+import Header from '../partials/Header'
 
 
 export default function PageAccueil() {
@@ -80,12 +84,15 @@ export default function PageAccueil() {
     {loader ? 
       <Loader />
     :
+      <>
+      <Header/>
       <div className="squareBackground">
-        <h1 id="bigTitle">All PRODUCTS</h1>
+        <h1 id="bigTitle">ALL PRODUCTS</h1>
         <Select options={options} 
                 value={selectedOption}
                 onChange={handleOnChange}
                 className="selectBar"
+                placeholder="Trier par type..."
         />
         <div className="buttonsDiv"> 
           <p>Trier par ingrédients qu'ils contiennent</p>     
@@ -141,6 +148,7 @@ export default function PageAccueil() {
           }
         </div>
       </div>
+      </>
       }
     </>
   )

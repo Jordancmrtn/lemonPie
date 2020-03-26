@@ -1,5 +1,5 @@
-@import 'utilities/mixins';
-@import 'utilities/variables';
+@import '../utilities/mixins';
+@import '../utilities/variables';
 
 #app {
   text-align: center;
@@ -8,26 +8,33 @@
   width: 100vw;
   @include displayFlexCenter(column,center);
 }
-
 .squareBackground{
   @include displayFlexCenter(column,space-evenly);
   width: 90%;
-  min-height: 90vh;
-  border-radius: 10px;
+  min-height: 80vh;
   background-color: #f9e4c7;
-}
+  border-radius: 0px 0px 10px 10px;
+  -moz-border-radius: 0px 0px 10px 10px;
+  -webkit-border-radius: 0px 0px 10px 10px;
 
+  p{
+    font-size: 13px;
+  }
+}
 #bigTitle{
-  margin: 0;
-  font-size: 104px;
+  margin: 32px 0 0 0;
+  font-size: 50px;
   width: 100%;
   color: $backgroundButton;
   font-style: oblique;
 }
-#articleCounter{
-  @include displayFlexCenter(column,center);
-  width: 50%;
-}
 canvas{
   outline-style: none;
+}
+
+@media screen and (min-width: 376px) {
+  #bigTitle{
+    font-size: 74px;
+    margin: 0;
+  }
 }

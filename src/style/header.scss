@@ -1,0 +1,48 @@
+@import 'utilities/mixins';
+@import 'utilities/variables';
+
+#headerDiv{
+  width: 90%;
+  @include displayFlexCenter(column,space-between);
+  margin-bottom: 22px;
+  
+  h1{
+    color: $backgroundButton;
+  }
+}
+#headerLinks{
+  @include displayFlexCenter(row,space-around);
+  width: 100%;
+  
+  a{
+    text-decoration: none;
+    color: $grey;
+    font-weight: 600;  
+  }
+
+  a:hover{
+    color: $backgroundButton;
+  }
+
+  a:last-child{
+    @include displayFlexCenter(row,center);
+
+    p{
+      margin: 0 12px 0 0;
+    }
+  }
+}
+
+@media screen and (min-width: 376px) {
+  #headerDiv {
+    @include displayFlexCenter(row,space-between);
+    margin-bottom: 0px;
+
+    h1{
+      padding: 0 0 0 64px;
+    }
+  }
+  #headerLinks{
+    width: 50%;
+  }
+}
