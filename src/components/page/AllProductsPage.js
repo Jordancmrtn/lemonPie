@@ -77,8 +77,6 @@ export default function PageAccueil() {
     setIngredients(obj) //Je set l'objet ingrédient par le nouvel obj avec la nouvelle valeur de l'ingrédient voulu
   }
 
-
-
   return (
     <>
     {loader ? 

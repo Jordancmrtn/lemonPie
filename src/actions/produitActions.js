@@ -1,14 +1,14 @@
 import _ from 'lodash';
 
-export const incrementCounter = (dispatch, article) => {
+export const addToBasket = (dispatch, article) => {
   
-  let newArticle = _.cloneDeep(article)
-  const id = Date.now()
-  newArticle.id = id;
-
+  // let newArticle = _.cloneDeep(article)
+  // const id = Date.now()
+  // newArticle.id = id;
+  // console.log(article)
   dispatch({
-    type : "INCREMENT",
-    payload : newArticle
+    type : "ADD_PANIER",
+    payload : article
   })
 }
 
