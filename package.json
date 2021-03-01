@@ -28,7 +28,7 @@
     "redux": "^4.0.5",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.2.1",
-    "three": "^0.114.0"
+    "three": "^0.125.0"
   },
   "scripts": {
     "start": "react-scripts start",
