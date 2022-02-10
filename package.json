@@ -16,7 +16,7 @@
     "babel-loader": "^8.1.0",
     "css-loader": "^3.5.3",
     "lodash": "^4.17.15",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "path": "^0.12.7",
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
